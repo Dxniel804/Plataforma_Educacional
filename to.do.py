@@ -19,13 +19,14 @@ def criar_tarefa():
 def excluir_tarefa():
     print('-- Excluir uma Tarefa --\n')
     print('--> TAREFAS <--\n')
+    
     for chave, valor in tarefas.items():
         print(f'Titulo: {chave}\nDescrição: {valor}')
         lean()
     print('Qual tarefa deseja EXCLUIR?')
     title = input("Digite o título da tarefa:")
     os.system('pause')
-    os.system('cls')
+    os.system('cls')    
     if title in tarefas:
         del tarefas[title]
         print(f'Tarefa {title}, excluida com sucesso')
@@ -47,6 +48,11 @@ def visualizar_tarefa():
         lean()
     os.system("pause")
     os.system("cls")
+
+def sair():
+     print('SAINDO...')
+     os.system('pause')
+     os.system('cls')
 
 def menu():
     while True:
@@ -71,10 +77,9 @@ def menu():
 
         elif escolha == 4:
             visualizar_tarefa()
+
         elif escolha == 5:
-            print('SAINDO...')
-            os.system('pause')
-            os.system('cls')
+            sair()
 
 menu()
 
