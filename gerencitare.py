@@ -1,7 +1,6 @@
 import os
 
 tarefas = {}
-numer = 1
 
 def lean():
     print('════════════════════════════════════════════════ ♦️')
@@ -11,29 +10,41 @@ def criar_tarefa():
     title = input("Digite o título da tarefa: ")
     descricao = input("Digite a descrição da tarefa: ")
     tarefas[title] = descricao
+    lean()
     print(f"Tarefa '{title}' criada com sucesso!")
-    numer += 1
 
     os.system("pause")
     os.system("cls")
 
 def excluir_tarefa():
     print('-- Excluir uma Tarefa --\n')
-    visualizar_tarefa(tarefas)
+    print('--> TAREFAS <--\n')
+    for chave, valor in tarefas.items():
+        print(f'Titulo: {chave}\nDescrição: {valor}')
+        lean()
     print('Qual tarefa deseja EXCLUIR?')
-    print(tarefas)
+    title = input("Digite o título da tarefa:")
+    os.system('pause')
+    os.system('cls')
+    if title in tarefas:
+        del tarefas[title]
+        print(f'Tarefa {title}, excluida com sucesso')
+
     os.system("pause")
     os.system("cls")
 
 def editar_tarefa():
     print('-- Editar uma Tarefa --\n')
+    visualizar_tarefa()
 
     os.system("pause")
     os.system("cls")
 
 def visualizar_tarefa():
     print('-- Visualizar as Tarefas --\n')
-
+    for chave, valor in tarefas.items():
+        print(f'Titulo: {chave}\nDescrição: {valor}')
+        lean()
     os.system("pause")
     os.system("cls")
 
@@ -45,7 +56,9 @@ def menu():
         print('2 - Excluir Tarefa')
         print('3 - Editar Tarefa')
         print('4 - Visualizar Tarefa')
+        print('5 - Sair')
         escolha = int(input('\n---> '))
+        os.system('cls')
         
         if escolha == 1:
             criar_tarefa()
@@ -58,8 +71,10 @@ def menu():
 
         elif escolha == 4:
             visualizar_tarefa()
-        else:
-            print('Opção inválida. Tente novamente.')
+        elif escolha == 5:
+            print('SAINDO...')
+            os.system('pause')
+            os.system('cls')
 
 menu()
 
