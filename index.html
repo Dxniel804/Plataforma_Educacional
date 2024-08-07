@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para Bianca</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #ffebee; /* Rosa claro para um fundo mais suave */
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+        .container {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            width: 90%;
+            max-width: 600px;
+        }
+
+        .heart {
+            position: relative;
+            display: inline-block;
+            width: 120px;
+            height: 120px;
+            margin-bottom: 20px;
+        }
+
+        .heart-shape {
+            position: absolute;
+            width: 120px;
+            height: 120px;
+            background: #e91e63; /* Cor rosa vibrante */
+            border-radius: 50%;
+            transform: rotate(-45deg);
+            top: 0;
+            left: 0;
+        }
+
+        .heart-shape:before,
+        .heart-shape:after {
+            content: "";
+            position: absolute;
+            width: 120px;
+            height: 120px;
+            background: #e91e63; /* Cor rosa vibrante */
+            border-radius: 50%;
+        }
+
+        .heart-shape:before {
+            top: -60px;
+            left: 0;
+        }
+
+        .heart-shape:after {
+            top: 0;
+            left: 60px;
+        }
+
+        .heart-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4); /* Sombra para destacar o texto */
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+            font-size: 28px;
+            margin-top: 0;
+        }
+
+        .message {
+            color: #555;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="heart">
+            <div class="heart-shape"></div>
+            <div class="heart-shape"></div>
+            <div class="heart-text">EU TE AMO</div>
+        </div>
+        <h1>Para a minha amada Bianca</h1>
+        <p class="message">Você é a luz da minha vida, o sorriso que ilumina meus dias e o amor que aquece meu coração. Te amo mais do que palavras podem expressar!</p>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
