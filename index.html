@@ -3,102 +3,352 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Para Bianca</title>
+    <title>Página Inicial - Plataforma Educacional</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
     <style>
         body {
+            font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #ffebee; /* Rosa claro para um fundo mais suave */
-            font-family: 'Arial', sans-serif;
+            background-color: #f4f7f6;
+            color: #333;
+        }
+
+        header {
+            background-color: #005662;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            color: #ffffff;
+            font-size: 42px;
+            margin: 0;
+            font-weight: 800;
+            letter-spacing: 2px;
+        }
+
+        header nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 15px 0;
+        }
+
+        header nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        header nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 20px;
+            font-weight: 500;
+            transition: color 0.3s;
+            cursor: pointer;
+        }
+
+        header nav ul li a:hover {
+            color: #ffeb3b;
+        }
+
+        #banner {
+            background: linear-gradient(135deg, #005662 0%, #00bfa5 100%);
+            color: #ffffff;
+            padding: 100px 20px;
+            text-align: center;
+            background-size: cover;
+            background-position: center;
+        }
+
+        #banner h2 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        #banner p {
+            font-size: 22px;
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+
+        #banner button {
+            padding: 15px 40px;
+            font-size: 20px;
+            color: #005662;
+            background-color: #ffeb3b;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background-color 0.3s;
+        }
+
+        #banner button:hover {
+            background-color: #fbc02d;
+        }
+
+        /* Carrossel de Imagens */
+        .swiper-container {
+            width: 100%;
+            padding-top: 50px;
+            padding-bottom: 50px;
+        }
+
+        .swiper-slide {
+            background-position: center;
+            background-size: cover;
+            width: 350px;
+            height: 500px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .swiper-slide:hover {
+            transform: scale(1.05);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Fundo azul claro */
+        #content {
+            background-color: #b3d9dc;
+            padding: 60px 20px;
+            text-align: center;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            text-align: center;
+            flex-wrap: wrap;
         }
 
-        .container {
-            background: #ffffff;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-            width: 90%;
-            max-width: 600px;
+        #content div {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+            gap: 20px;
         }
 
-        .heart {
-            position: relative;
-            display: inline-block;
-            width: 120px;
-            height: 120px;
+        #content h4 {
+            color: #005662;
+            font-size: 28px;
+            font-weight: 600;
             margin-bottom: 20px;
         }
 
-        .heart-shape {
-            position: absolute;
-            width: 120px;
-            height: 120px;
-            background: #e91e63; /* Cor rosa vibrante */
-            border-radius: 50%;
-            transform: rotate(-45deg);
-            top: 0;
-            left: 0;
-        }
-
-        .heart-shape:before,
-        .heart-shape:after {
-            content: "";
-            position: absolute;
-            width: 120px;
-            height: 120px;
-            background: #e91e63; /* Cor rosa vibrante */
-            border-radius: 50%;
-        }
-
-        .heart-shape:before {
-            top: -60px;
-            left: 0;
-        }
-
-        .heart-shape:after {
-            top: 0;
-            left: 60px;
-        }
-
-        .heart-text {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            color: white;
+        #content p {
+            color: #333;
             font-size: 20px;
-            font-weight: bold;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4); /* Sombra para destacar o texto */
+            margin-bottom: 30px;
+            line-height: 1.6;
+            flex: 1 1 45%;
+            text-align: left;
+        }
+
+        #content img {
+            max-width: 40%;
+            border-radius: 15px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            flex: 1 1 45%;
+        }
+
+        #cadastro, #chatbot {
+            padding: 60px 20px;
+            text-align: center;
+            background-color: #f9f9f9;
+        }
+
+        #cadastro h2, #chatbot h2 {
+            color: #005662;
+            margin-bottom: 30px;
+            font-size: 28px;
+            font-weight: 600;
+        }
+
+        #cadastro .form-container, #chat-box {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            text-align: left;
+            margin: 0 auto;
+        }
+
+        #cadastro form, #chat-box {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 15px;
+            width: 320px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
             text-align: center;
         }
 
-        h1 {
-            color: #333;
-            font-size: 28px;
-            margin-top: 0;
+        #cadastro input {
+            display: block;
+            width: 100%;
+            margin-bottom: 20px;
+            padding: 15px;
+            border-radius: 50px;
+            border: 1px solid #ccc;
+            font-size: 16px;
         }
 
-        .message {
-            color: #555;
+        #cadastro button {
+            padding: 15px 25px;
             font-size: 20px;
+            color: #fff;
+            background-color: #005662;
+            border: none;
+            cursor: pointer;
+            border-radius: 50px;
+            transition: background-color 0.3s;
+            font-weight: 600;
+        }
+
+        #cadastro button:hover {
+            background-color: #004d40;
+        }
+
+        #chat-content p {
+            font-size: 20px;
+            margin-bottom: 25px;
+            font-weight: 400;
+        }
+
+        #chat-content button {
+            padding: 15px 25px;
+            font-size: 20px;
+            color: #fff;
+            background-color: #005662;
+            border: none;
+            cursor: pointer;
+            border-radius: 50px;
+            transition: background-color 0.3s;
+        }
+
+        #chat-content button:hover {
+            background-color: #004d40;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="heart">
-            <div class="heart-shape"></div>
-            <div class="heart-shape"></div>
-            <div class="heart-text">EU TE AMO</div>
+    <!-- Header -->
+    <header>
+        <h1>Plataforma Educacional</h1>
+        <nav>
+            <ul>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#planos">Planos</a></li>
+                <li><a href="#cadastro">Cadastro</a></li>
+                <li><a href="#login">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Carrossel de Imagens -->
+    <section class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide" style="background-image:url('img/PLAN1.jpg')"></div>
+            <div class="swiper-slide" style="background-image:url('img/PLAN2.jpg')"></div>
+            <div class="swiper-slide" style="background-image:url('img/PLAN3.jpg')"></div>
+            <div class="swiper-slide" style="background-image:url('img/PLAN4.jpg')"></div>
         </div>
-        <h1>Para a minha amada Bianca</h1>
-        <p class="message">Você é a luz da minha vida, o sorriso que ilumina meus dias e o amor que aquece meu coração. Te amo mais do que palavras podem expressar!</p>
-    </div>
-    <script src="script.js"></script>
+        <div class="swiper-pagination"></div>
+    </section>
+
+    <!-- Descrição de propaganda -->
+    <section id="content">
+        <div>
+            <p>Nossa plataforma oferece uma solução completa para a gestão e aprendizado, integrando ferramentas inovadoras que facilitam o planejamento de aulas, a gestão do progresso dos alunos e muito mais. Com uma interface intuitiva e recursos avançados, nossos usuários podem criar um ambiente educacional mais eficiente e dinâmico. Descubra como nossa plataforma pode transformar sua escola!</p>
+            <img src="img/PLAN5.jpg" alt="Descubra">
+        </div>
+    </section>
+
+    <!-- Banner com propaganda da plataforma -->
+    <section id="banner">
+        <div class="banner-content">
+            <h2>Transforme sua escola com nossa plataforma</h2>
+            <p>Uma solução completa para a gestão e aprendizado.</p>
+            <button onclick="window.location.href='#planos'">Escolha seu Plano</button>
+        </div>
+    </section>
+
+    <!-- Formulário de cadastro e login -->
+    <section id="cadastro">
+        <h2>Cadastre-se ou Faça Login</h2>
+        <div class="form-container">
+            <form id="signup-form">
+                <input type="text" placeholder="Nome Completo" required>
+                <input type="email" placeholder="E-mail" required>
+                <input type="password" placeholder="Senha" required>
+                <button type="submit">Cadastre-se</button>
+            </form>
+            <form id="login-form">
+                <input type="email" placeholder="E-mail" required>
+                <input type="password" placeholder="Senha" required>
+                <button type="submit">Login</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Chat Bot -->
+    <section id="chatbot">
+        <h2>Chat Bot</h2>
+        <div id="chat-box">
+            <div id="chat-content">
+                <p>Como podemos ajudar?</p>
+                <button onclick="startChat()">Iniciar Chat</button>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script>
+        var swiper = new Swiper('.swiper-container', {
+            effect: 'coverflow',
+            grabCursor: true,
+            centeredSlides: true,
+            slidesPerView: 'auto',
+            coverflowEffect: {
+                rotate: 50,
+                stretch: 0,
+                depth: 100,
+                modifier: 1,
+                slideShadows: true,
+            },
+            loop: true,
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+        });
+
+        function startChat() {
+            const chatContent = document.getElementById('chat-content');
+            chatContent.innerHTML = `
+                <p>Chat iniciado! Como podemos ajudar?</p>
+                <input type="text" id="user-query" placeholder="Digite sua pergunta..." style="width: 100%; padding: 15px; margin-bottom: 15px; border-radius: 5px; border: 1px solid #ccc;">
+                <button onclick="sendQuery()">Enviar</button>
+            `;
+        }
+
+        function sendQuery() {
+            const query = document.getElementById('user-query').value;
+            const chatContent = document.getElementById('chat-content');
+            chatContent.innerHTML += <p>Você: ${query}</p>;
+            chatContent.innerHTML += <p>Chat Bot: Estamos processando sua pergunta...</p>;
+            // Aqui você pode adicionar a lógica para enviar a pergunta à API da OpenAI e receber uma resposta.
+        }
+    </script>
 </body>
 </html>
